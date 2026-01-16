@@ -77,11 +77,11 @@ const dockApps = [
 const blogPosts = [
   {
     id: 1,
-    date: "Sep 2, 2025",
+    date: "Jan 4, 2026",
     title:
-      "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
-    image: "/images/blog1.png",
-    link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
+      "Transformer Explained: What It Is , All the components and How It Works",
+    image: "/images/transformer.webp",
+    link: "https://dev.to/pranshu_tiwari_2886e14e9c/transformer-basics-2jlc",
   },
   {
     id: 2,
