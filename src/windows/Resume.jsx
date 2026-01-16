@@ -15,6 +15,10 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 ).toString();
 
 const Resume = () => {
+  const onDocumentLoadSuccess = () => {
+    // Handle document load success
+  };
+
   return (
     <>
       <div id="window-header" className="flex items-center justify-between">
@@ -30,11 +34,8 @@ const Resume = () => {
           <Download className="icon" />
         </a>
       </div>
-       <Document file="files/resume.pdf" >
-        <Page pageNumber={1}
-        rederTextLayer
-        rederAnnotationLayer
-         />
+       <Document file="files/resume.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+        <Page pageNumber={1} renderTextLayer renderAnnotationLayer />
       </Document>
     </>
   );
