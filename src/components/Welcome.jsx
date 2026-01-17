@@ -61,24 +61,72 @@ const setupTextHover = (container, type) => {
 const Welcome = () => {
     const titleRef = useRef(null);
     const subtitleRef = useRef(null);
+    const mobileSubtitleRef = useRef(null);
+    const mobileTitleRef = useRef(null);
 
+    // Desktop/tablet hover animation (original behavior)
     useGSAP(() =>{
-        const titleCleanup=setupTextHover(titleRef.current, 'title');
-        const subtitleCleanup=setupTextHover(subtitleRef.current, 'subtitle');
-        return () => {
-            titleCleanup();
-           subtitleCleanup();
-        }
+      if (typeof window !== 'undefined' && window.innerWidth < 640) return;
+
+      const titleCleanup = setupTextHover(titleRef.current, 'title');
+      const subtitleCleanup = setupTextHover(subtitleRef.current, 'subtitle');
+      return () => {
+        titleCleanup && titleCleanup();
+        subtitleCleanup && subtitleCleanup();
+      };
     },[]);
 
-  return <section id="welcome">
-    <p ref={subtitleRef}>{renderText("Hey,I'm Pranshu! Welcome to my", 'text-3xl font-georama',100)}</p>
-    <h1 ref={titleRef} className='mt-7'>{renderText("portfolio", "text-9xl italic font-georama")}</h1>
+    // Mobile-only wave/flow animation
+    useGSAP(() =>{
+      if (typeof window === 'undefined' || window.innerWidth >= 640) return;
 
-    <div className='small-screen'>
-        <p>This pOrtfolio is designed for desktop/tableted screens</p>
-    </div>
-  </section>
+      const mobileSubtitle = mobileSubtitleRef.current;
+      const mobileTitle = mobileTitleRef.current;
+      if (!mobileSubtitle || !mobileTitle) return;
+        
+      const subtitleLetters = mobileSubtitle.querySelectorAll("span");
+      const titleLetters = mobileTitle.querySelectorAll("span");
+        
+      subtitleLetters.forEach((letter, i) => {
+        gsap.fromTo(letter, 
+          { opacity: 0, y: 10 },
+          { 
+            opacity: 1, 
+            y: 0,
+            duration: 0.3,
+            delay: i * 0.05,
+            ease: "power2.out"
+          }
+        );
+      });
+        
+      titleLetters.forEach((letter, i) => {
+        gsap.fromTo(letter, 
+          { opacity: 0, y: 10 },
+          { 
+            opacity: 1, 
+            y: 0,
+            duration: 0.3,
+            delay: subtitleLetters.length * 0.05 + i * 0.05,
+            ease: "power2.out"
+          }
+        );
+      });
+    },[]);
+
+  return <>
+    <section id="welcome" className="hidden max-sm:flex">
+      <div className="text-center">
+        <p ref={mobileSubtitleRef}>{renderText("Hey,I'm Pranshu!", 'text-sm font-georama',100)}</p>
+        <h1 ref={mobileTitleRef} className='text-xl font-bold italic mt-2'>{renderText("portfolio", "font-georama")}</h1>
+      </div>
+    </section>
+    
+    <section id="welcome" className="max-sm:hidden">
+      <p ref={subtitleRef}>{renderText("Hey,I'm Pranshu! Welcome to my", 'text-3xl font-georama',100)}</p>
+      <h1 ref={titleRef} className='mt-7'>{renderText("portfolio", "text-9xl italic font-georama")}</h1>
+    </section>
+  </>
 }
 
 export default Welcome

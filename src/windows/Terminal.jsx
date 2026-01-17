@@ -4,6 +4,8 @@ import WindowWrapper from "#hoc/WindowWrapper";
 import { Check, Flag } from "lucide-react";
 
 const Terminal = () => {
+  const totalStacks = techStack.length;
+
   return (
     <>
       <div id="window-header">
@@ -30,6 +32,7 @@ const Terminal = () => {
               <ul>
                 {items.map((item, i) => (
                   <li key={i}>
+                    <Check className="check-inline" size={16} />
                     {item}
                     {i < items.length - 1 ? "," : ""}
                   </li>
@@ -40,7 +43,8 @@ const Terminal = () => {
         </ul>
           <div className="footnote">
             <p>
-                <Check size={20} />5 of 5 stacks loaded successfully(100%)
+                <Check size={20} />
+                {totalStacks} of {totalStacks} stacks loaded successfully(100%)
             </p>
             <p className="footnote">
                 <Flag size={15} fill="black" />

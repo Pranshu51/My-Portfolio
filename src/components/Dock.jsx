@@ -11,6 +11,11 @@ const Dock = () => {
 const dockRef = useRef(null);
 
 useGSAP(() => {
+  // Enable hover lift animation on tablet/desktop; keep phones static
+  if (typeof window !== "undefined" && window.innerWidth < 640) {
+    return;
+  }
+
   const dock = dockRef.current;
   if (!dock) return;
 
@@ -81,7 +86,7 @@ const toggleApp = (app) =>{
   <section id="dock">
     <div ref={dockRef} className="dock-container">
       {dockApps.map(({ id, name, icon, canOpen }) => (
-        <div key={id} className="relative flex justify-center">
+        <div key={id} className="relative flex flex-col justify-center items-center max-sm:gap-1">
           <button
             type="button"
             className="dock-icon"
@@ -99,6 +104,7 @@ const toggleApp = (app) =>{
               className={canOpen ? "" : "opacity-60"}
             />
           </button>
+          <p className="hidden max-sm:block text-[10px] text-center text-gray-600 w-full">{name}</p>
         </div>
       ))}
       <Tooltip id="dock-tooltip" place="top" className="tooltip" />
