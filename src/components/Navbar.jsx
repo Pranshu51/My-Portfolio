@@ -4,7 +4,7 @@ import useWindowStore from '#store/window'
 
 
 
-const Navbar = () => {
+const Navbar = ({ togglePanel }) => {
     const {openWindow} = useWindowStore();
   return <nav>
     <div>
@@ -19,13 +19,12 @@ const Navbar = () => {
         </ul>
     </div>
     <div>
-        <ul>
+        <ul className="max-sm:gap-2">
             {navIcons.map(({id,img}) => (
-                <li key={id}>
+                <li key={id} onClick={togglePanel}>
                     <img src={img} className='icon-hover' alt={`icon-${id}`} />
-                    </li>
+                </li>
             ))}
-               
         </ul>
         <time>{dayjs().format('ddd MMM D h:mm A')}</time>
     </div>

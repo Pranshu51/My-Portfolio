@@ -101,28 +101,38 @@ const blogPosts = [
 
 const techStack = [
   {
-    category: "Frontend",
-    items: ["React.js", "Next.js", "TypeScript"],
+    category: "Programming Languages",
+    items: ["Java", "JavaScript", "TypeScript", "Python", "C++"],
   },
   {
-    category: "Mobile",
-    items: ["React Native", "Expo"],
+    category: "Frontend Development",
+    items: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Responsive UI Design"],
   },
   {
-    category: "Styling",
-    items: ["Tailwind CSS", "Sass", "CSS"],
+    category: "Backend Development",
+    items: ["Node.js", "Express.js", "FastAPI", "WebSockets (Real-time Applications)"],
   },
   {
-    category: "Backend",
-    items: ["Node.js", "Express", "NestJS", "Hono"],
+    category: "Databases & ORMs",
+    items: ["PostgreSQL", "Prisma ORM", "Database Design & Queries"],
   },
   {
-    category: "Database",
-    items: ["MongoDB", "PostgreSQL"],
+    category: "AI / Machine Learning",
+    items: [
+      "Machine Learning Fundamentals",
+      "Neural Networks", 
+      "Sentiment Analysis",
+      "House Price Prediction (Regression)",
+      "AI Chatbots",
+      "PDF & Invoice Data Extraction",
+      "Multimodal AI Concepts",
+      "Agentic AI Systems",
+      "NLP"
+    ],
   },
   {
-    category: "Dev Tools",
-    items: ["Git", "GitHub", "Docker"],
+    category: "Tools & Platforms",
+    items: ["Git & GitHub", "Postman", "Authentication & Authorization"],
   },
 ];
 
@@ -493,14 +503,14 @@ export const locations = {
 const INITIAL_Z_INDEX = 1000;
 
 const WINDOW_CONFIG = {
-  finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMinimized: false, isMaximized: false, prevStyles: null },
+  contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMinimized: false, isMaximized: false, prevStyles: null },
+  resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMinimized: false, isMaximized: false, prevStyles: null },
+  safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMinimized: false, isMaximized: false, prevStyles: null },
+  photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMinimized: false, isMaximized: false, prevStyles: null },
+  terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMinimized: false, isMaximized: false, prevStyles: null },
+  txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMinimized: false, isMaximized: false, prevStyles: null },
+  imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMinimized: false, isMaximized: false, prevStyles: null },
 };
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };
