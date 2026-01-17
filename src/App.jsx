@@ -1,10 +1,12 @@
-import React from 'react'
+import { Navbar, Welcome, Dock } from '#components';
 
 const App = () => {
   return (
-    <div >
-     <h1 className='text-amber-200'>Welcome to MacFolio</h1>
-    </div>
+    <main>
+      <Navbar />
+      <Welcome />
+      <Dock />
+    </main>
   )
 }
 
