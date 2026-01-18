@@ -142,28 +142,21 @@ const socials = [
     text: "Github",
     icon: "/icons/github.svg",
     bg: "#f4656b",
-    link: "https://github.com/JavaScript-Mastery-Pro",
+    link: "https://github.com/Pranshu51?tab=repositories",
   },
   {
     id: 2,
-    text: "Platform",
-    icon: "/icons/atom.svg",
-    bg: "#4bcb63",
-    link: "https://jsmastery.com/",
-  },
-  {
-    id: 3,
     text: "Twitter/X",
     icon: "/icons/twitter.svg",
     bg: "#ff866b",
-    link: "https://x.com/jsmasterypro",
+    link: "https://x.com/pranshu__51",
   },
   {
-    id: 4,
+    id: 3,
     text: "LinkedIn",
     icon: "/icons/linkedin.svg",
     bg: "#05b6f6",
-    link: "https://www.linkedin.com/company/javascriptmastery/posts/?feedView=all",
+    link: "www.linkedin.com/in/pranshutiwarii",
   },
 ];
 
@@ -198,20 +191,37 @@ const photosLinks = [
 const gallery = [
   {
     id: 1,
-    img: "/images/gal1.png",
+    img: "/images/me.jpeg",
   },
   {
     id: 2,
-    img: "/images/gal2.png",
+    img: "/images/meet.jpeg",
   },
   {
     id: 3,
-    img: "/images/gal3.png",
+    img: "/images/iit1.jpeg",
   },
   {
     id: 4,
-    img: "/images/gal4.png",
+    img: "/images/iit2.jpeg",
   },
+   {
+    id: 5,
+    img: "/images/iit3.jpeg",
+  },
+   {
+    id: 6,
+    img: "/images/hack.jpeg",
+  },
+  {
+    id: 7,
+    img: "/images/hack1.jpeg",
+  },
+  {
+    id: 8,
+    img: "/images/hack2.jpeg",
+  },
+  
 ];
 
 export {
@@ -261,7 +271,7 @@ const WORK_LOCATION = {
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://youtu.be/fZdTYswuZjU?si=Awjl-pIst9e09_UU",
+          href: "",
           position: "top-10 right-20",
         },
         {
@@ -314,7 +324,7 @@ const WORK_LOCATION = {
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://youtu.be/iYOz165wGkQ?si=R1hs8Legl200m0Cl",
+          href: "",
           position: "top-20 left-20",
         },
         {
@@ -403,29 +413,29 @@ const ABOUT_LOCATION = {
     {
       id: 1,
       name: "me.png",
-      icon: "/images/image.png",
+      icon: "/images/me.jpeg",
       kind: "file",
       fileType: "img",
       position: "top-10 left-5",
-      imageUrl: "/images/adrian.jpg",
+      imageUrl: "/images/me.jpeg",
     },
     {
       id: 2,
       name: "casual-me.png",
-      icon: "/images/image.png",
+      icon: "/images/meet.jpeg",
       kind: "file",
       fileType: "img",
       position: "top-28 right-72",
-      imageUrl: "/images/adrian-2.jpg",
+      imageUrl: "/images/meet.jpeg",
     },
     {
       id: 3,
       name: "conference-me.png",
-      icon: "/images/image.png",
+      icon: "/images/hack1.jpeg",
       kind: "file",
       fileType: "img",
       position: "top-52 left-80",
-      imageUrl: "/images/adrian-3.jpeg",
+      imageUrl: "/images/hack1.jpeg",
     },
     {
       id: 4,
@@ -435,12 +445,12 @@ const ABOUT_LOCATION = {
       fileType: "txt",
       position: "top-60 left-5",
       subtitle: "Meet the Developer Behind the Code",
-      image: "/images/adrian.jpg",
+      image: "/images/me.jpeg",
       description: [
-        "Hey! I’m Adrian 👋, a web developer who enjoys building sleek, interactive websites that actually work well.",
-        "I specialize in JavaScript, React, and Next.js—and I love making things feel smooth, fast, and just a little bit delightful.",
-        "I’m big on clean UI, good UX, and writing code that doesn’t need a search party to debug.",
-        "Outside of dev work, you'll find me tweaking layouts at 2AM, sipping overpriced coffee, or impulse-buying gadgets I absolutely convinced myself I needed 😅",
+        "Hey! I’m Pranshu 👋, a B.Tech student in AI & Data Science who loves building full-stack web apps and scalable systems..",
+        "I specialize in React, Node.js, and Next.js—with a knack for cloning real-world platforms to master system design, authentication, and backend workflows.",
+        "I’m big on problem-solving, clean UI, and bringing ideas to life with modern web tech—whether it’s a real-time chat app, a coding practice platform, or an AI chatbot that extracts invoice data.",
+        "Outside of coding, you’ll find me diving into machine learning concepts, exploring Agentic AI, or probably debugging that one tricky API integration late into the night 🧠⚡",
       ],
     },
   ],
