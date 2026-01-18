@@ -458,4 +458,11 @@ body {
       }
     }
   }
+
+  /* Extra mobile safety: lift dock further above bottom on real devices */
+  @media (max-width: 768px) {
+    #dock {
+      bottom: calc(env(safe-area-inset-bottom) + 6rem);
+    }
+  }
 }

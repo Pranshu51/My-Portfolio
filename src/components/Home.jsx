@@ -11,16 +11,18 @@ gsap.registerPlugin(Draggable);
 const projects = locations.work?.children ?? [];
 
 const Home = () => {
-    const {setActiveLocation} = useLocationStore();
-    const {openWindow} = useWindowStore();
+  const { setActiveLocation } = useLocationStore();
+  const { openWindow } = useWindowStore();
 
-    const handleOpenProjectFinder = (project) => {
-        setActiveLocation(project);
-        openWindow("finder");
-    };
+  // Always open the main "My Projects" (work) view in Finder
+  // when clicking any desktop folder icon
+  const handleOpenProjectFinder = () => {
+    setActiveLocation(locations.work);
+    openWindow("finder");
+  };
 
-  const handleFolderClick = (project) => {
-    handleOpenProjectFinder(project);
+  const handleFolderClick = () => {
+    handleOpenProjectFinder();
   };
 
     // Enable drag for project folders (desktop + mobile) via GSAP Draggable
@@ -42,15 +44,16 @@ const Home = () => {
         draggables.forEach((d) => d && d.kill());
       };
     }, []);
-  return (
+    return (
     <section id="home">
       <ul>
         {projects.map((project) => (
           <li
             key={project.id}
             className={clsx("group folder", project.windowPosition)}
-            onClick={() => handleFolderClick(project)}
-            onDoubleClick={() => handleOpenProjectFinder(project)}
+              onClick={handleFolderClick}
+              onDoubleClick={handleOpenProjectFinder}
+              onTouchEnd={handleFolderClick}
           >
             <img src="/images/folder.png" alt={project.name} />
             <p>{project.name}</p>

@@ -46,13 +46,13 @@ const MobilePanel = ({ showPanel, setShowPanel }) => {
   ];
 
   return (
-    <div
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      className={`fixed top-0 left-0 w-full h-full transition-all duration-300 z-40 max-sm:block hidden ${
-        showPanel ? "bg-black/40" : ""
-      }`}
-    >
+  <div
+    onTouchStart={handleTouchStart}
+    onTouchMove={handleTouchMove}
+    className={`fixed top-0 left-0 w-full transition-all duration-300 z-40 max-sm:block hidden ${
+    showPanel ? "h-full bg-black/40" : "h-16 bg-transparent"
+    }`}
+  >
       <div
         className={`fixed top-0 left-0 w-full bg-white/95 backdrop-blur-lg rounded-b-3xl transition-all duration-300 max-sm:block hidden ${
           showPanel ? "translate-y-0 shadow-2xl" : "-translate-y-full"
