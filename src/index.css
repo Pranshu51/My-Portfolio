@@ -128,7 +128,7 @@ body {
   }
 
   #dock {
-    @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none max-sm:bottom-2 max-sm:left-1/2 max-sm:-translate-x-1/2;
+    @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none max-sm:bottom-8 max-sm:left-1/2 max-sm:-translate-x-1/2;
 
     .dock-container {
       @apply bg-white/20 backdrop-blur-md rounded-2xl p-1.5 flex items-center gap-1.5 max-sm:justify-center max-sm:overflow-x-auto max-sm:overflow-y-hidden max-sm:gap-2 max-sm:px-3 max-sm:py-1.5 max-sm:max-w-[90vw];
